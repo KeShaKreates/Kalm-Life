@@ -10,7 +10,7 @@
 `npm run build-css`
 
 
-# Run
+# Start
 
 `npm start` 
 `node server.js`
