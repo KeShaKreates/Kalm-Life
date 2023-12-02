@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const PORT = process.env.PORT || 2222;
 const mongoose = require("mongoose");
 const passport = require("passport");
 const session = require("express-session");
@@ -65,6 +66,6 @@ app.get("/getUserBelief", beliefRoutes);
 
 
 //Server Running
-app.listen(process.env.PORT, () => {
-  console.log("The server is running.");
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
 });
