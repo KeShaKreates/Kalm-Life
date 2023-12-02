@@ -45,7 +45,6 @@ module.exports = {
 // Update your controller
 favoriteJournalPost: async (req, res) => {
   try {
-    // Assuming you have a user ID stored in req.user.id
     const userId = req.user.id;
 
     // Find the journal post by ID
@@ -56,10 +55,8 @@ favoriteJournalPost: async (req, res) => {
 
     if (journalpost && journalpost.favorite) {
       const hasFavorited = journalpost.favorite.includes(userId);
-      // Rest of the code...
     } else {
       console.log('Journal post or favorite not defined');
-      // Handle the case where data is not as expected.
     }
     
 
@@ -82,12 +79,9 @@ favoriteJournalPost: async (req, res) => {
   }
 },
 
-// Assuming you have a route to get journal posts and populate favorite
-// Example route: /journalposts
 
 getfavoriteJournalPost: async (req, res) => {
   try {
-    // Assuming you have a user ID stored in req.user.id
     const userId = req.user.id;
 
     // Fetch only the journal posts favorited by the current user

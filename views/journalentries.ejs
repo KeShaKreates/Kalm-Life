@@ -61,13 +61,11 @@ $(document).ready(function () {
       updateButtonState($(this), currentState);
 
       // Perform additional actions, such as sending a request to update the server-side state
-      // Note: You might need to adjust this part based on your requirements
       $.ajax({
         url: $(this).attr('action'),
         method: 'POST',
         success: function (data) {
           console.log('Success:', data);
-          // Handle success if needed
         },
         error: function (error) {
           console.error('Error:', error);
