@@ -62,8 +62,8 @@ app.use("/", mainRoutes);
 app.use("/journalpost", journalpostRoutes);
 app.use("/belief", beliefRoutes);
 
+// Creating a route to handle HTTP GET requests for the /getUserBelief path
 app.get("/getUserBelief", beliefRoutes);
-
 
 //Server Running
 app.listen(PORT, () => {

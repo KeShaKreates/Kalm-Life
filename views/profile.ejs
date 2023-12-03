@@ -1,62 +1,86 @@
 <%- include('partials/header') -%>
-<head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-</head>
+  <head>
+    <!-- Include jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
 
-<body class=" flex flex-col min-h-screen">
+  <body class="flex flex-col min-h-screen">
 
-  <main class="flex-1">
+    <main class="flex-1">
+      <!-- Welcome message -->
+      <h1 class="text-center mt-20 my-10 mx-5 xs:text-2xl md:text-5xl font-bold text-neutral">
+        Welcome To Your Account Page
+      </h1>
 
-<h1 class="text-center mt-20 my-10 mx-5 xs:text-2xl md:text-5xl  font-bold text-neutral">Welcome To Your Account Page</h1>
+      <div class="flex justify-center mx-auto text-center container">
+        <div class="row">
+          <div class="col-6">
 
-    <div class="flex justify-center mx-auto text-center container">
-      <div class="row ">
-        <div class="col-6">
-
-          <div class="avatar placeholder">
-            <div class="bg-neutral-focus text-neutral-content rounded-full w-24  mb-7">
-              <span class="text-md"><%= user.belief %></span>
+            <!-- User information section -->
+            <div class="avatar placeholder">
+              <div class="bg-neutral-focus text-neutral-content rounded-full w-24 mb-7">
+                <!-- Display user's belief in the avatar -->
+                <span class="text-md">
+                  <%= user.belief %>
+                </span>
+              </div>
             </div>
-          </div>
 
-          <div class="profile">
-            <div class="divider"></div>
-            <p class="mb-3 "><strong>Username</strong></p>
-            <h3><%= user.userName %></h3>
-    
-            <div class="divider"></div>
-            <p class="mb-3"><strong>Email</strong></p>
-            <h3><%= user.email %></h3>
-    
-            <div class="divider"></div>
-            <p class="mb-3"><strong>My Belief System</strong></p>
-            <h3><%= user.belief %></h3>
-    
-            <div class="divider"></div>
-            <p class="mb-3"><strong>My Struggle</strong></p>
-            <h3><%= user.disorders %></h3>
-    
-            <div class="divider"></div>
-            <a href="/logout" class="col-3 btn  btn-ghost xs:btn-sm md:btn-md ring-4 ring-primary ring-offset-4 ring-offset-base-100  " id="logoutButton">Logout</a>
+            <div class="profile">
+              <div class="divider"></div>
+              <p class="mb-3"><strong>Username</strong></p>
+              <!-- Display user's username -->
+              <h3>
+                <%= user.userName %>
+              </h3>
+
+              <div class="divider"></div>
+              <p class="mb-3"><strong>Email</strong></p>
+              <!-- Display user's email -->
+              <h3>
+                <%= user.email %>
+              </h3>
+
+              <div class="divider"></div>
+              <p class="mb-3"><strong>My Belief System</strong></p>
+              <!-- Display user's belief system -->
+              <h3>
+                <%= user.belief %>
+              </h3>
+
+              <div class="divider"></div>
+              <p class="mb-3"><strong>My Struggle</strong></p>
+              <!-- Display user's struggles/disorders -->
+              <h3>
+                <%= user.disorders %>
+              </h3>
+
+              <div class="divider"></div>
+              <!-- Logout button -->
+              <a href="/logout"
+                class="col-3 btn btn-ghost xs:btn-sm md:btn-md ring-4 ring-primary ring-offset-4 ring-offset-base-100"
+                id="logoutButton">
+                Logout
+              </a>
+            </div>
+
           </div>
-          
         </div>
       </div>
-    </div>
 
-<script>
-  document.getElementById('logoutButton').addEventListener('click', function () {
-    // Clear the local storage when the user logs out
-    localStorage.removeItem('hasModalBeenShown');
-  });
-</script>
-
+      <script>
+        // Add event listener for logout button
+        document.getElementById('logoutButton').addEventListener('click', function () {
+          // Clear the local storage when the user logs out
+          localStorage.removeItem('hasModalBeenShown');
+        });
+      </script>
 
     </main>
-    
-    </body>
 
-    <div class="mt-20">
-<%- include('partials/footer') -%>
-</div>
+  </body>
+
+  <div class="mt-20">
+    <%- include('partials/footer') -%>
+  </div>

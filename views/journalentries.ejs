@@ -1,102 +1,102 @@
 <%- include('partials/header') -%>
-<head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-</head>
+  <head>
+    <!-- Include jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
 
-<body class=" flex flex-col  min-h-screen">
+  <body class="flex flex-col min-h-screen">
 
-  <main class=" flex-1 mx-auto ">
+    <main class="flex-1 mx-auto">
 
-<h1 class="text-center mt-20 my-10 mx-5 xs:text-2xl md:text-5xl font-bold text-neutral ">Here Are Your Journal Entries</h1>
+      <!-- Display heading for journal entries -->
+      <h1 class="text-center mt-20 my-10 mx-5 xs:text-2xl md:text-5xl font-bold text-neutral">
+        Here Are Your Journal Entries
+      </h1>
 
-  <% for (var i = 0; i < journalposts.length; i++) { %>
-    <div class="flex flex-col w-full border-opacity-50 ">
-      <div class="grid h-32 card rounded-box place-items-center grow p-8 ">
-        <a class="hover:text-neutral text-md underline decoration-2 underline-offset-8 pb-2  xs:text-base md:text-xl  " href="/journalpost/<%= journalposts[i]._id %>">
-          <%= journalposts[i].title %>
-        </a>
-            <form
-            class="favorite-button "
-            action="/journalpost/favoriteJournalPost/<%= journalposts[i]._id %>?_method=PUT"
-            method="POST"
-            data-entry-id="<%= journalposts[i]._id %>"
-          >
-            <button class="mask mask-heart btn btn-primary  " type="submit"></button>
-          </form>
+      <!-- Loop through journal posts -->
+      <% for (var i=0; i < journalposts.length; i++) { %>
+        <div class="flex flex-col w-full border-opacity-50">
+          <!-- Display each journal entry with a link to view details -->
+          <div class="grid h-32 card rounded-box place-items-center grow p-8">
+            <a class="hover:text-neutral text-md underline decoration-2 underline-offset-8 pb-2 xs:text-base md:text-xl"
+              href="/journalpost/<%= journalposts[i]._id %>">
+              <%= journalposts[i].title %>
+            </a>
+
+            <!-- Form for the favorite button -->
+            <form class="favorite-button"
+              action="/journalpost/favoriteJournalPost/<%= journalposts[i]._id %>?_method=PUT" method="POST"
+              data-entry-id="<%= journalposts[i]._id %>">
+              <!-- Heart button for favoriting the journal entry -->
+              <button class="mask mask-heart btn btn-primary" type="submit"></button>
+            </form>
           </div>
         </div>
-  
-      <div class=" divider "></div>
 
-  <% } %>
+        <!-- Divider between journal entries -->
+        <div class="divider"></div>
+        <% } %>
 
+          <!-- Script for handling favorite button interactions -->
+          <script>
+            $(document).ready(function () {
+              // Function to update the button state
+              function updateButtonState(button, isFavorite) {
+                button.find('button').toggleClass('btn-primary btn-neutral', isFavorite);
+                // Store the state in localStorage using a unique key for each button
+                localStorage.setItem(`favorite-state-${button.data('entry-id')}`, isFavorite);
+              }
 
-<script>
+              // Iterate over each favorite button on the page
+              $('.favorite-button').each(function () {
+                const entryId = $(this).data('entry-id');
 
-$(document).ready(function () {
-  // Function to update the button state
-  function updateButtonState(button, isFavorite) {
-    button.find('button').toggleClass('btn-primary btn-neutral', isFavorite);
-    // Store the state in localStorage using a unique key for each button
-    localStorage.setItem(`favorite-state-${button.data('entry-id')}`, isFavorite);
-  }
+                // Retrieve the state from localStorage based on the button's associated entry ID
+                const isFavorite = localStorage.getItem(`favorite-state-${entryId}`) === 'true';
 
-  // Iterate over each favorite button on the page
-  $('.favorite-button').each(function () {
-    const entryId = $(this).data('entry-id');
-    
-    // Retrieve the state from localStorage based on the button's associated entry ID
-    const isFavorite = localStorage.getItem(`favorite-state-${entryId}`) === 'true';
+                // Set the initial state
+                updateButtonState($(this), isFavorite);
 
-    // Set the initial state
-    updateButtonState($(this), isFavorite);
+                // Attach click event to each button
+                $(this).on('click', function (event) {
+                  event.preventDefault();
 
-    // Attach click event to each button
-    $(this).on('click', function (event) {
-      event.preventDefault();
-      
-      // Toggle the classes
-      const currentState = !$(this).find('button').hasClass('btn-neutral');
-      updateButtonState($(this), currentState);
+                  // Toggle the classes
+                  const currentState = !$(this).find('button').hasClass('btn-neutral');
+                  updateButtonState($(this), currentState);
 
-      // Perform additional actions, such as sending a request to update the server-side state
-      $.ajax({
-        url: $(this).attr('action'),
-        method: 'POST',
-        success: function (data) {
-          console.log('Success:', data);
-        },
-        error: function (error) {
-          console.error('Error:', error);
-          // Revert the button state on error
-          updateButtonState($('.favorite-button[data-entry-id="'+entryId+'"]'), !currentState);
-        },
-      });
-    });
-  });
-});
+                  // Perform additional actions, such as sending a request to update the server-side state
+                  $.ajax({
+                    url: $(this).attr('action'),
+                    method: 'POST',
+                    success: function (data) {
+                      console.log('Success:', data);
+                    },
+                    error: function (error) {
+                      console.error('Error:', error);
+                      // Revert the button state on error
+                      updateButtonState($('.favorite-button[data-entry-id="' + entryId + '"]'), !currentState);
+                    },
+                  });
+                });
+              });
+            });
 
+            // Set the initial state for each button
+            $('.favorite-button').each(function () {
+              const entryId = $(this).data('entry-id');
+              // Retrieve the state from localStorage based on the button's associated entry ID
+              const isFavorite = localStorage.getItem(`favorite-state-${entryId}`) === 'true';
+              // Set the initial state
+              updateButtonState($(this), isFavorite);
+            });
+          </script>
 
-  // Set the initial state for each button
-  $('.favorite-button').each(function () {
-    const entryId = $(this).data('entry-id');
-    // Retrieve the state from localStorage based on the button's associated entry ID
-    const isFavorite = localStorage.getItem(`favorite-state-${entryId}`) === 'true';
-    // Set the initial state
-    updateButtonState($(this), isFavorite);
-  });
+    </main>
 
+  </body>
 
-
-</script>
-
-</main>
-
-</body>
-
-<div class=" mt-1">
-
-  <%- include('partials/otherfooter') -%>
-
-</div>
+  <div class="mt-1">
+    <%- include('partials/otherfooter') -%>
+  </div>

@@ -1,46 +1,42 @@
+/* Tailwind CSS imports */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* all pages  */
-
+/* Base styles for all pages */
 @layer base {
-    html {
-      font-family: Poppins, system-ui, sans-serif;
-    }
+  html {
+    font-family: Poppins, system-ui, sans-serif;
   }
+}
 
-  @media (min-width: 250px) {
-    .sm\:col-span-4 {
-      grid-column: span 4 / span 4;
-    }
-  
-    .sm\:col-span-1 {
-      grid-column: span 1 / span 1;
-    }
-  
-    .sm\:col-span-2 {
-      grid-column: span 2 / span 2;
-    }
-  
-    .sm\:row-span-4 {
-      grid-row: span 4 / span 4;
-    }
-  
-    .sm\:flex-col {
-      flex-direction: column;
-    }
+/* Media queries for small screens */
+@media (min-width: 250px) {
+  /* Responsive grid layout */
+  .sm\:col-span-4 {
+    grid-column: span 4 / span 4;
   }
-
-  .btn
-  {
-   box-shadow: 0 0 2px 2px #a3bfb2;
-   text-transform: capitalize;
+  .sm\:col-span-1 {
+    grid-column: span 1 / span 1;
   }
+  .sm\:col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+  .sm\:row-span-4 {
+    grid-row: span 4 / span 4;
+  }
+  .sm\:flex-col {
+    flex-direction: column;
+  }
+}
 
+/* Button styling */
+.btn {
+  box-shadow: 0 0 2px 2px #a3bfb2;
+  text-transform: capitalize;
+}
 
-  /* header */
-
+/* Header and Footer styling */
 header, .footer {
   border: solid 1px #000000;
   background-color: white;
@@ -52,118 +48,89 @@ header, .footer {
 
 .KLlogo {
   font-weight: 900;
-  /* color: #a3bfb2; */
   color: transparent;
   -webkit-text-stroke-width: 0.5px;
   -webkit-text-stroke-color: black;
-  
 }
 
-  /* home page  */
-
-  @media (max-width: 767px) and (min-width: 250px) {
-    .mask-circle  
-     {
-      min-height: 300px;
-      min-width: 300px;
-      filter: drop-shadow(0 0 0.95rem #a3bfb2);
-    }
+/* Home page styling */
+@media (max-width: 767px) and (min-width: 250px) {
+  .mask-circle {
+    min-height: 300px;
+    min-width: 300px;
+    filter: drop-shadow(0 0 0.95rem #a3bfb2);
   }
+}
 
-  @media (min-width: 768px) {
-  .mask-circle  
-     {
-      min-height: 450px;
-      min-width: 450px;
-      filter: drop-shadow(0 0 0.95rem #a3bfb2);
-    }
+@media (min-width: 768px) {
+  .mask-circle {
+    min-height: 450px;
+    min-width: 450px;
+    filter: drop-shadow(0 0 0.95rem #a3bfb2);
   }
+}
 
-    .quote, .author {
-      text-shadow: #a3bfb2 1rem 1rem 10px;
-    }
+.quote, .author {
+  text-shadow: #a3bfb2 1rem 1rem 10px;
+}
 
-    /* healing page  */
+/* Healing page styling */
+.error-mood-message {
+  color: rgb(255, 123, 123);
+  padding: 15px;
+  font-weight: 900;
+  height: 100%;
+  margin: 0px;
+}
 
-   .error-mood-message {
-      color: rgb(255, 123, 123);
-      padding: 15px;
-      font-weight: 900;
-      height: 100%;
-      margin: 0px;
-    }
-
-    .pmm, .nmm, .bmm, .pms, .nms, .bms, .pmc, .nmc, .bmc
-    {
-      height: 750px;
-
-    }
-
-    th, tr {
-      text-align: center;
-    }
-
-    
-    @media (max-width: 767px) and (min-width: 250px) {
-      .right-content-title
-      {
-        height: 100px;
-      }
-    }
-  
-    @media (min-width: 768px) {
-      .right-content-title
-      {
-        height: 150px;
-      }
-    }
-
-  
-
-    @media (max-width: 767px) and (min-width: 250px) {
-      .right-content-journal    
-    {
-      height: 175px;
-    }
-    }
-  
-    @media (min-width: 768px) {
-      .right-content-journal    
-      {
-        height: 450px;
-      }
-    }
-
-
-    .textarea {
-      resize: none; 
-      font-size: 14px;
-
-    }
-
-    .right-content-extra-help  
-    {
-      height: 100px;
-    }
-
-    th {
-      background-color: transparent;
-      text-shadow: #a3bfb2 1rem 1rem 10px;
-    }
-  /* jorunal post page */
-
-  .phone-2  {
-    box-shadow: 0 0 5px 5px #a3bfb2;
+/* Media queries for small screens */
+@media (max-width: 767px) and (min-width: 250px) {
+  .right-content-title {
+    height: 100px;
   }
+}
 
-  /* jorunal entries page  */
+@media (min-width: 768px) {
+  .right-content-title {
+    height: 150px;
+  }
+}
 
-    .rounded-box  
-    {
-     min-height: 200px;
-     min-width: 200px;
-     filter: drop-shadow( #a3bfb2 1rem 1rem 8px);
-    }
+/* Media queries for small screens */
+@media (max-width: 767px) and (min-width: 250px) {
+  .right-content-journal {
+    height: 175px;
+  }
+}
 
+@media (min-width: 768px) {
+  .right-content-journal {
+    height: 450px;
+  }
+}
 
-    
+.textarea {
+  resize: none;
+  font-size: 14px;
+}
+
+.right-content-extra-help {
+  height: 100px;
+}
+
+/* Journal post page styling */
+th {
+  background-color: transparent;
+  text-shadow: #a3bfb2 1rem 1rem 10px;
+}
+
+.phone-2 {
+  box-shadow: 0 0 5px 5px #a3bfb2;
+}
+
+/* Journal entries page styling */
+.rounded-box {
+  min-height: 200px;
+  min-width: 200px;
+  filter: drop-shadow( #a3bfb2 1rem 1rem 8px);
+}

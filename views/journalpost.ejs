@@ -1,46 +1,48 @@
 <%- include('partials/header') -%>
 
+  <body class="flex flex-col min-h-screen">
 
-<body class=" flex flex-col min-h-screen">
+    <main class="flex-1">
 
-  <main class="flex-1">
+      <!-- Display the title of the journal post -->
+      <h1 class="text-center mt-20 my-10 mx-5 xs:text-2xl md:text-5xl font-bold text-neutral">
+        <%= journalpost.title %>
+      </h1>
 
-<h1 class="text-center mt-20 my-10 mx-5 xs:text-2xl md:text-5xl font-bold text-neutral"> <%= journalpost.title %></h1>
+      <div class="w-10/12 rounded-lg artboard-horizontal phone-2 flex justify-center mx-auto p-8 ">
 
+        <!-- Display the content and date of the journal post -->
+        <div class="mx-auto text-center my-auto tracking-wide text-ellipsis overflow-hidden">
+          <div class="italic">
+            <p>
+              <%= journalpost.caption %>
+            </p>
+          </div>
 
-<div class=" w-10/12 rounded-lg artboard-horizontal phone-2 flex justify-center mx-auto p-8 ">
- 
-
-    <div class="mx-auto text-center my-auto tracking-wide text-ellipsis overflow-hidden ">
-      <div class="italic ">
-        <p><%= journalpost.caption %></p>
+          <div>
+            <!-- Display the creation date of the journal post -->
+            <p class="text-sm text-neutral mt-4 italic ">
+              <%= journalpost.createdAt.toDateString() %>
+            </p>
+          </div>
+        </div>
       </div>
-      
-      <div>
-        <p class="text-sm text-neutral mt-4 italic "><%= journalpost.createdAt.toDateString() %></p>
-    </div>
 
+      <div class="mx-auto flex ">
+        <!-- Form to delete the journal post -->
+        <div class="grid h-20 flex-grow card rounded-box place-items-center">
+          <form action="/journalpost/deleteJournalPost/<%= journalpost.id %>?_method=DELETE" method="POST">
+            <!-- Button to submit the form and delete the journal post -->
+            <button class="btn fa fa-trash btn-ghost ring-4 ring-primary ring-offset-4 ring-offset-base-100"
+              type="submit"></button>
+          </form>
+        </div>
+      </div>
+
+    </main>
+
+  </body>
+
+  <div class="mt-1">
+    <%- include('partials/otherfooter') -%>
   </div>
-</div>
-
-<div class="mx-auto flex ">
-  <div class="grid h-20 flex-grow card rounded-box place-items-center">
-    <form
-    class="justify-center"
-    action="/journalpost/deleteJournalPost/<%= journalpost.id %>?_method=DELETE"
-    method="POST">
-    <button class="btn fa fa-trash btn-ghost ring-4 ring-primary ring-offset-4 ring-offset-base-100  " type="submit"></button>
-    </form>
-  </div>
-</div>
-
-</main>
-
-</body>
-
-
-<div class=" mt-1">
-
-  <%- include('partials/otherfooter') -%>
-
-</div>

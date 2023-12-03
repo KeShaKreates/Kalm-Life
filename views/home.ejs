@@ -1,293 +1,313 @@
 <%- include('partials/header') -%>
 
-<head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
-</head>
+  </head>
 
-<body class=" flex flex-col min-h-screen">
+  <body class=" flex flex-col min-h-screen">
 
-  <main class="flex-1">
-
-    
-<div class="mx- auto">
+    <main class="flex-1">
 
 
-<div class=" flex justify-center mx-auto mt-10 ">
-
-  <div class=" relative mask mask-circle rounded-full border-8 border-base-100 mb-6  " > </div>
-
-  <div class=" absolute py-9">
-    <div class="card-body text-center ">
-      <h2 class="quote card-title mx-auto xs:text-2xl md:text-5xl my-7 text-neutral"><%= quote %></h2>
-      <p class="author xs:text-base md:text-2xl text-neutral">-<%= author %></p>
-    </div>
-  </div>
-
-</div>
-</div>
+      <div class="mx- auto">
 
 
-<!-- Muslim Code -->
+        <div class=" flex justify-center mx-auto mt-10 ">
 
-<div class="flex justify-center">
+          <div class=" relative mask mask-circle rounded-full border-8 border-base-100 mb-6  "> </div>
 
-<div class=" hidden mt-6 " id="muslimDropdown">
+          <div class=" absolute py-9">
+            <div class="card-body text-center ">
+              <h2 class="quote card-title mx-auto xs:text-2xl md:text-5xl my-7 text-neutral">
+                <%= quote %>
+              </h2>
+              <p class="author xs:text-base md:text-2xl text-neutral">-<%= author %>
+              </p>
+            </div>
+          </div>
 
-  <div class= " items-center mb-5 artboard artboard-horizontal phone-1 p-4">
-    <div class="card-body text-center">
-      <div class="card-actions justify-center ">   
-
-<label class="card-title my-3 xs:text-lg md:text-3xl text-neutral"  for="muslimmoods">Tell Us How You Are Feeling</label>
-<select  class="my-3 select select-primary xs:select-sm md:select-md w-full max-w-xs " name="questions" id="muslimmoods">
-    <option>Select your mood</option>
-    <option value="pmoodmuslim" >Positive Mood</option>
-    <option value="nmoodmuslim">Negative Mood</option>
-    <option value="bmoodmuslim">Both</option>
-</select>
-
-<button id="healing-button-muslim" class="sad col-3 btn btn-ghost flex justify-center my-3 ring-4 ring-primary ring-offset-4 ring-offset-base-100 xs:w-44 md:w-72 xs:btn-sm md:btn-md "  type="button">Heal me now</button>
-
-</div>
-</div>
-</div>
-</div> 
-</div> 
-
-<script>
-
-  // Function to be called when the healing button is clicked on the home page
-  $(document).ready(function () {
-    $('#healing-button-muslim').on('click', function () {
-      var selectedMuslimMood = $('#muslimmoods').val();
-
-      if (selectedMuslimMood === "pmoodmuslim") {
-        displayMuslimHealingTech("positivemuslim");
-      } else if (selectedMuslimMood === "nmoodmuslim") {
-        displayMuslimHealingTech("negativemuslim");
-      } else if (selectedMuslimMood === "bmoodmuslim") {
-        displayMuslimHealingTech("bothmuslim");
-      }
-    });
-
-    function displayMuslimHealingTech(divId) {
-      // Save the selected div ID to local storage
-      localStorage.setItem("selectedMuslimDiv", divId);
-      // Redirects to the healing page
-      window.location.href = "healing";
-    }
-  });
- 
-            $(document).ready(function () {
-              $('#muslim-beliefs-button').on('click', function () {
-                  $('#muslimDropdown').show();
-                  $(this).hide();
-                  })
-            });
-
-</script>
-
-<!-- Muslim Code -->
+        </div>
+      </div>
 
 
+      <!-- Muslim Code -->
 
-<!-- Spiritualist Code --> 
+      <div class="flex justify-center">
 
-<div class="flex justify-center ">
+        <div class=" hidden mt-6 " id="muslimDropdown">
 
-<div class=" hidden mt-5 " id="spiritualistDropdown">
+          <div class=" items-center mb-5 artboard artboard-horizontal phone-1 p-4">
+            <div class="card-body text-center">
+              <div class="card-actions justify-center ">
 
-  <div class= " items-center mb-5 artboard artboard-horizontal phone-1 p-4">
-    <div class="card-body text-center">
-      <div class="card-actions justify-center ">
+                <label class="card-title my-3 xs:text-lg md:text-3xl text-neutral" for="muslimmoods">Tell Us How You Are
+                  Feeling</label>
+                <select class="my-3 select select-primary xs:select-sm md:select-md w-full max-w-xs " name="questions"
+                  id="muslimmoods">
+                  <option>Select your mood</option>
+                  <option value="pmoodmuslim">I'm in a positive mood</option>
+                  <option value="nmoodmuslim">I'm in a negative mood</option>
+                  <option value="bmoodmuslim">I'm in both moods</option>
+                </select>
 
-      <label class="card-title my-3 xs:text-lg md:text-3xl text-neutral" for="spiritualistmoods">Tell Us How You Are Feeling</label>
-      <select class="my-3 select select-primary xs:select-sm md:select-md w-full max-w-xs " name="questions" id="spiritualistmoods">
-          <option>Select your mood</option>
-          <option value="pmoodspiritualist" >I'm in a positive mood</option>
-          <option value="nmoodspiritualist">I'm in a negative Mood</option>
-          <option value="bmoodspiritualist">I'm in both moods</option>
-      </select>
+                <button id="healing-button-muslim"
+                  class="sad col-3 btn btn-ghost flex justify-center my-3 ring-4 ring-primary ring-offset-4 ring-offset-base-100 xs:w-44 md:w-72 xs:btn-sm md:btn-md "
+                  type="button">Heal me now</button>
 
-      <button id="healing-button-spiritualist" class="sad col-3 btn btn-ghost flex justify-center my-3 ring-4 ring-primary ring-offset-4 ring-offset-base-100 xs:w-44 md:w-72 xs:btn-sm md:btn-md "  type="button">Heal me now</button>
-</div>
-</div>
-</div>
-</div>
-</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-<script>
+      <script>
 
-$(document).ready(function () {
+        // Function to be called when the healing button is clicked on the home page
+        $(document).ready(function () {
+          $('#healing-button-muslim').on('click', function () {
+            var selectedMuslimMood = $('#muslimmoods').val();
+
+            if (selectedMuslimMood === "pmoodmuslim") {
+              displayMuslimHealingTech("positivemuslim");
+            } else if (selectedMuslimMood === "nmoodmuslim") {
+              displayMuslimHealingTech("negativemuslim");
+            } else if (selectedMuslimMood === "bmoodmuslim") {
+              displayMuslimHealingTech("bothmuslim");
+            }
+          });
+
+          function displayMuslimHealingTech(divId) {
+            // Save the selected div ID to local storage
+            localStorage.setItem("selectedMuslimDiv", divId);
+            // Redirects to the healing page
+            window.location.href = "healing";
+          }
+        });
+
+        $(document).ready(function () {
+          $('#muslim-beliefs-button').on('click', function () {
+            $('#muslimDropdown').show();
+            $(this).hide();
+          })
+        });
+
+      </script>
+
+      <!-- Muslim Code -->
+
+
+
+      <!-- Spiritualist Code -->
+
+      <div class="flex justify-center ">
+
+        <div class=" hidden mt-5 " id="spiritualistDropdown">
+
+          <div class=" items-center mb-5 artboard artboard-horizontal phone-1 p-4">
+            <div class="card-body text-center">
+              <div class="card-actions justify-center ">
+
+                <label class="card-title my-3 xs:text-lg md:text-3xl text-neutral" for="spiritualistmoods">Tell Us How
+                  You Are Feeling</label>
+                <select class="my-3 select select-primary xs:select-sm md:select-md w-full max-w-xs " name="questions"
+                  id="spiritualistmoods">
+                  <option>Select your mood</option>
+                  <option value="pmoodspiritualist">I'm in a positive mood</option>
+                  <option value="nmoodspiritualist">I'm in a negative Mood</option>
+                  <option value="bmoodspiritualist">I'm in both moods</option>
+                </select>
+
+                <button id="healing-button-spiritualist"
+                  class="sad col-3 btn btn-ghost flex justify-center my-3 ring-4 ring-primary ring-offset-4 ring-offset-base-100 xs:w-44 md:w-72 xs:btn-sm md:btn-md "
+                  type="button">Heal me now</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+
+        $(document).ready(function () {
           $('#healing-button-spiritualist').on('click', function () {
             var selectedSpiritualistMood = $('#spiritualistmoods').val();
 
-      if (selectedSpiritualistMood === "pmoodspiritualist") {
-        displaySpiritualistHealingTech("positivespiritualist");
-      } else if (selectedSpiritualistMood === "nmoodspiritualist") {
-        displaySpiritualistHealingTech("negativespiritualist");
-      } else if (selectedSpiritualistMood === "bmoodspiritualist") {
-        displaySpiritualistHealingTech("bothspiritualist");
-      }
-    });
+            if (selectedSpiritualistMood === "pmoodspiritualist") {
+              displaySpiritualistHealingTech("positivespiritualist");
+            } else if (selectedSpiritualistMood === "nmoodspiritualist") {
+              displaySpiritualistHealingTech("negativespiritualist");
+            } else if (selectedSpiritualistMood === "bmoodspiritualist") {
+              displaySpiritualistHealingTech("bothspiritualist");
+            }
+          });
 
-    function displaySpiritualistHealingTech(divId) {
-      // Save the selected div ID to local storage
-      localStorage.setItem("selectedSpiritualistDiv", divId);
-      // Redirects to the healing page
-      window.location.href = "healing";
-    }
-  });
- 
-$(document).ready(function () {
-    $('#spiritualist-beliefs-button').on('click', function () {
-        $('#spiritualistDropdown').show();
-        $(this).hide(); // Hide the button when clicked
-    });
-});
+          function displaySpiritualistHealingTech(divId) {
+            // Save the selected div ID to local storage
+            localStorage.setItem("selectedSpiritualistDiv", divId);
+            // Redirects to the healing page
+            window.location.href = "healing";
+          }
+        });
 
-
-</script>
-
-<!-- Spiritualist Code -->
-
-<!-- Christian Code -->
-
-<div class="flex justify-center ">
-
-<div class=" hidden mt-6 " id="christianDropdown">
-
-  <div class= " items-center mb-5 artboard artboard-horizontal phone-1 p-4">
-    <div class="card-body text-center">
-      <div class="card-actions justify-center ">
-
-        <label class="card-title my-3 xs:text-lg md:text-3xl text-neutral" for="christianmoods">Tell Us How You Are Feeling</label>
-        <select  class="my-3 select select-primary xs:select-sm md:select-md w-full max-w-xs " name="questions" id="christianmoods">
-            <option>Select your mood</option>
-            <option value="pmoodchristian">Positive Mood</option>
-            <option value="nmoodchristian">Negative Mood</option>
-            <option value="bmoodchristian">Both</option>
-        </select>
-
-        <button id="healing-button-christian" class="sad col-3 btn btn-ghost flex justify-center my-3 ring-4 ring-primary ring-offset-4 ring-offset-base-100 xs:w-44 md:w-72 xs:btn-sm md:btn-md "  type="button">Heal me now</button>
-
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<script>
-
-$(document).ready(function () {
-      $('#healing-button-christian').on('click', function () {
-        var selectedChristianMood = $('#christianmoods').val();
-
-      if (selectedChristianMood === "pmoodchristian") {
-        displayChristianHealingTech("positivechristian");
-      } else if (selectedChristianMood === "nmoodchristian") {
-        displayChristianHealingTech("negativechristian");
-      } else if (selectedChristianMood === "bmoodchristian") {
-        displayChristianHealingTech("bothchristian");
-      }
-    });
-
-    function displayChristianHealingTech(divId) {
-      // Save the selected div ID to local storage
-      localStorage.setItem("selectedChristianDiv", divId);
-      // Redirects to the healing page
-      window.location.href = "healing";
-    }
-  });
-
-            $(document).ready(function () {
-              $('#christian-beliefs-button').on('click', function () {
-                  $('#christianDropdown').show();
-                  $(this).hide();
-                  })
-            });
+        $(document).ready(function () {
+          $('#spiritualist-beliefs-button').on('click', function () {
+            $('#spiritualistDropdown').show();
+            $(this).hide(); // Hide the button when clicked
+          });
+        });
 
 
-            $(document).ready(function () {
-  // Make an AJAX request to get the user's belief from the server
-  $.get('/getUserBelief', function(data) {
-    var userMoodBelief = data.belief;
+      </script>
 
-    // Show the corresponding button based on the selected belief
-    if (userMoodBelief === "Christian") {
-      $('#christian-beliefs-button').show();
-    } else if (userMoodBelief === "Muslim") {
-      $('#muslim-beliefs-button').show();
-    } else if (userMoodBelief === "Spiritualist") {
-      $('#spiritualist-beliefs-button').show();
-    }
+      <!-- Spiritualist Code -->
 
-    console.log("userMoodBelief:", userMoodBelief);
-  });
-});
+      <!-- Christian Code -->
 
-      
+      <div class="flex justify-center ">
 
-</script>   
+        <div class=" hidden mt-6 " id="christianDropdown">
+
+          <div class=" items-center mb-5 artboard artboard-horizontal phone-1 p-4">
+            <div class="card-body text-center">
+              <div class="card-actions justify-center ">
+
+                <label class="card-title my-3 xs:text-lg md:text-3xl text-neutral" for="christianmoods">Tell Us How You
+                  Are Feeling</label>
+                <select class="my-3 select select-primary xs:select-sm md:select-md w-full max-w-xs " name="questions"
+                  id="christianmoods">
+                  <option>Select your mood</option>
+                  <option value="pmoodchristian">I'm in a positive mood</option>
+                  <option value="nmoodchristian">I'm in a negative mood</option>
+                  <option value="bmoodchristian">I'm in both moods</option>
+                </select>
+
+                <button id="healing-button-christian"
+                  class="sad col-3 btn btn-ghost flex justify-center my-3 ring-4 ring-primary ring-offset-4 ring-offset-base-100 xs:w-44 md:w-72 xs:btn-sm md:btn-md "
+                  type="button">Heal me now</button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+
+        $(document).ready(function () {
+          $('#healing-button-christian').on('click', function () {
+            var selectedChristianMood = $('#christianmoods').val();
+
+            if (selectedChristianMood === "pmoodchristian") {
+              displayChristianHealingTech("positivechristian");
+            } else if (selectedChristianMood === "nmoodchristian") {
+              displayChristianHealingTech("negativechristian");
+            } else if (selectedChristianMood === "bmoodchristian") {
+              displayChristianHealingTech("bothchristian");
+            }
+          });
+
+          function displayChristianHealingTech(divId) {
+            // Save the selected div ID to local storage
+            localStorage.setItem("selectedChristianDiv", divId);
+            // Redirects to the healing page
+            window.location.href = "healing";
+          }
+        });
+
+        $(document).ready(function () {
+          $('#christian-beliefs-button').on('click', function () {
+            $('#christianDropdown').show();
+            $(this).hide();
+          })
+        });
 
 
-<!-- Christian Code -->
+        $(document).ready(function () {
+          // Make an AJAX request to get the user's belief from the server
+          $.get('/getUserBelief', function (data) {
+            var userMoodBelief = data.belief;
 
+            // Show the corresponding button based on the selected belief
+            if (userMoodBelief === "Christian") {
+              $('#christian-beliefs-button').show();
+            } else if (userMoodBelief === "Muslim") {
+              $('#muslim-beliefs-button').show();
+            } else if (userMoodBelief === "Spiritualist") {
+              $('#spiritualist-beliefs-button').show();
+            }
 
-<div class="flex justify-center ">
-
-  <button id="christian-beliefs-button" type= "button" class=" hidden mt-10 col-3 btn btn-ghost ring-4 ring-primary ring-offset-4 ring-offset-base-100 xs:w-44 md:w-72 xs:btn-sm md:btn-lg">Lets get started</button>
-
-
-<button id="muslim-beliefs-button" type= "button" class=" hidden mt-10 col-3 btn btn-ghost ring-4 ring-primary ring-offset-4 ring-offset-base-100 xs:w-44 md:w-72 xs:btn-sm md:btn-lg">Lets get started</button>
-
-
-<button id="spiritualist-beliefs-button" type= "button" class=" hidden mt-10 col-3 btn btn-ghost ring-4 ring-primary ring-offset-4 ring-offset-base-100 xs:w-44 md:w-72 xs:btn-sm md:btn-lg">Lets get started</button>
-
-</div>
-
-</div>
-
-<button class="hidden btn" onclick="my_modal_1.showModal()"></button>
-
-<dialog id="my_modal_1" class="modal">
-  <div class="modal-box text-center ">
-    <h3 class="font-bold text-lg"> Welcome to Kalm Life!</h3>
-    <p class="py-5"> Your healing journey awaits you..</p>
-    <div class="modal-action ">
-      <form method="dialog">
-      </form>
-    </div>
-  </div>
-
- <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    var myModal = document.getElementById('my_modal_1');
-
-    // Check if the modal has been shown in this session
-    var hasModalBeenShown = localStorage.getItem('hasModalBeenShown');
-
-    if (!hasModalBeenShown) {
-      myModal.showModal();
-
-      // Mark that the modal has been shown in this session
-      localStorage.setItem('hasModalBeenShown', true);
-
-      // Hide the modal after 4 seconds
-      setTimeout(function () {
-        myModal.close();
-      }, 4000);
-    }
-    
-  });
-</script>
-
-</dialog>
+            console.log("userMoodBelief:", userMoodBelief);
+          });
+        });
 
 
 
-</main>
+      </script>
 
-</body>
-      <%- include('partials/footer') -%>
-    
+
+      <!-- Christian Code -->
+
+
+      <div class="flex justify-center ">
+
+        <button id="christian-beliefs-button" type="button"
+          class=" hidden mt-10 col-3 btn btn-ghost ring-4 ring-primary ring-offset-4 ring-offset-base-100 xs:w-44 md:w-72 xs:btn-sm md:btn-lg">Lets
+          get started</button>
+
+
+        <button id="muslim-beliefs-button" type="button"
+          class=" hidden mt-10 col-3 btn btn-ghost ring-4 ring-primary ring-offset-4 ring-offset-base-100 xs:w-44 md:w-72 xs:btn-sm md:btn-lg">Lets
+          get started</button>
+
+
+        <button id="spiritualist-beliefs-button" type="button"
+          class=" hidden mt-10 col-3 btn btn-ghost ring-4 ring-primary ring-offset-4 ring-offset-base-100 xs:w-44 md:w-72 xs:btn-sm md:btn-lg">Lets
+          get started</button>
+
+      </div>
+
+      </div>
+
+      <button class="hidden btn" onclick="my_modal_1.showModal()"></button>
+
+      <dialog id="my_modal_1" class="modal">
+        <div class="modal-box text-center ">
+          <h3 class="font-bold text-lg"> Welcome to Kalm Life!</h3>
+          <p class="py-5"> Your healing journey awaits you..</p>
+          <div class="modal-action ">
+            <form method="dialog">
+            </form>
+          </div>
+        </div>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function () {
+            var myModal = document.getElementById('my_modal_1');
+
+            // Check if the modal has been shown in this session
+            var hasModalBeenShown = localStorage.getItem('hasModalBeenShown');
+
+            if (!hasModalBeenShown) {
+              myModal.showModal();
+
+              // Mark that the modal has been shown in this session
+              localStorage.setItem('hasModalBeenShown', true);
+
+              // Hide the modal after 3 seconds
+              setTimeout(function () {
+                myModal.close();
+              }, 3000);
+            }
+
+          });
+        </script>
+
+      </dialog>
+
+
+
+    </main>
+
+  </body>
+  <%- include('partials/footer') -%>

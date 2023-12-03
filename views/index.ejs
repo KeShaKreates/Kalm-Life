@@ -1,64 +1,75 @@
 <%- include('partials/notauserheader') -%>
 
-<head>
+  <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   </head>
 
-<body>
+  <body>
 
     <main class=" flex flex-col justify-center h-screen my-auto ">
 
-      <div class="text-center my-10 md:p-0 md:m-0 my-auto">  
+      <div class="text-center my-10 md:p-0 md:m-0 my-auto">
 
-          <div class="lg:mt-0 md:m-20 md:p-1 xs:mx-auto sm:p-10 xs:p-5 ">
-            <h1 class=" font-bold xs:text-4xl sm:text-6xl md:text-7xl lg:text-8xl xs:h-24 sm:h-44 md:h-full xs:mb-20 md:mb-10 lg:mb-5 text-primary ">A holistic approach to bettering your mental health</h1>
-            <p class="py-6  xs:h-36 sm:h-20 md:h-10 lg:pt-10 xs:mb-20 md:mb-10 lg:mb-5  " >Kalm light is an app with the goal of healing you through various natural remedies and approaches. It connects with you on a deeper level by using your religous or spiritual beliefs to tailor your healing techniques to a perfect fit for you. The end result ? You feeling as light as a feather. Let's go on this journey together</p>
+        <div class="lg:mt-0 md:m-20 md:p-1 xs:mx-auto sm:p-10 xs:p-5 ">
+          <h1
+            class=" font-bold xs:text-4xl sm:text-6xl md:text-7xl lg:text-8xl xs:h-24 sm:h-44 md:h-full xs:mb-20 md:mb-10 lg:mb-5 text-primary ">
+            An all-encompassing approach for enhancing your mental well-being</h1>
+          <p class="py-6  xs:h-36 sm:h-20 md:h-10 lg:pt-10 xs:mb-20 md:mb-10 lg:mb-5  "><span
+              class="underline text-primary xs:text-base md:text-xl font-bold">Kalm Life</span> is a purposeful app
+            designed to facilitate healing through diverse natural remedies and approaches. By integrating your
+            religious or spiritual beliefs, it connects with you on a profound level, customizing healing techniques
+            perfectly suited to you. The ultimate outcome? A sensation of lightness akin to a feather. Embark on this
+            transformative journey with us.</p>
+        </div>
+
+        <div class="flex w-full justify-center xs:h-20 xs:mb-10">
+          <div class="grid h-20 flex-grow place-items-center xs:m-1 ">
+            <a id="index-login-button" href="/login"
+              class="col-3 btn  btn-ghost ring-4 ring-primary ring-offset-4 ring-offset-base-100 lg:w-96 md:w-72 sm:w-44 xs:w-32">
+              Login</a>
+            <h2 class="label text-sm">Already a user?</h2>
           </div>
 
-            <div class="flex w-full justify-center xs:h-20 xs:mb-10">
-              <div class="grid h-20 flex-grow place-items-center xs:m-1 ">
-                  <a id="index-login-button" href="/login" class="col-3 btn  btn-ghost ring-4 ring-primary ring-offset-4 ring-offset-base-100 lg:w-96 md:w-72 sm:w-44 xs:w-32"> Login</a>
-                  <h2 class="label text-sm">Already a user?</h2>
-              </div>
-              
 
-              <div class="grid h-20 flex-grow place-items-center xs:m-1">
-                  <a id="index-signup-button" href="/signup" class="col-3 btn  btn-ghost ring-4 ring-primary ring-offset-4 ring-offset-base-100 lg:w-96 md:w-72 sm:w-44 xs:w-32"> Signup</a>
-                  <h2 class="label text-sm">Not a user?</h2>
-              </div>
-            </div>
-        
+          <div class="grid h-20 flex-grow place-items-center xs:m-1">
+            <a id="index-signup-button" href="/signup"
+              class="col-3 btn  btn-ghost ring-4 ring-primary ring-offset-4 ring-offset-base-100 lg:w-96 md:w-72 sm:w-44 xs:w-32">
+              Signup</a>
+            <h2 class="label text-sm">Not a user?</h2>
           </div>
-       
+        </div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-      // Function to clear selected beliefs from local storage
-      function clearSelectedBeliefs() {
-        localStorage.removeItem('selectedChristianDiv');
-        localStorage.removeItem('selectedMuslimDiv');
-        localStorage.removeItem('selectedSpiritualistDiv');
-      }
-  
-      // Attach click event to the login button
-      document.getElementById('index-login-button').addEventListener('click', function (event) {
-        // Clear selected beliefs when the login button is clicked
-        clearSelectedBeliefs();
-      });
-  
-      // Attach click event to the signup button
-      document.getElementById('index-signup-button').addEventListener('click', function (event) {
-        // Clear selected beliefs when the signup button is clicked
-        clearSelectedBeliefs();
-      });
-    });
-  </script>
-  
+      </div>
+
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Function to clear selected beliefs from local storage
+          function clearSelectedBeliefs() {
+            localStorage.removeItem('selectedChristianDiv');
+            localStorage.removeItem('selectedMuslimDiv');
+            localStorage.removeItem('selectedSpiritualistDiv');
+          }
+
+          // Attach click event to the login button
+          document.getElementById('index-login-button').addEventListener('click', function (event) {
+            // Clear selected beliefs when the login button is clicked
+            clearSelectedBeliefs();
+          });
+
+          // Attach click event to the signup button
+          document.getElementById('index-signup-button').addEventListener('click', function (event) {
+            // Clear selected beliefs when the signup button is clicked
+            clearSelectedBeliefs();
+          });
+        });
+      </script>
+
 
     </main>
-    
-</body>
 
-<div class="mt-10">
-  <%- include('partials/footer') -%>
-</div>
+  </body>
+
+  <div class="mt-10">
+    <%- include('partials/footer') -%>
+  </div>

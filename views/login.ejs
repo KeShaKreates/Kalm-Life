@@ -1,66 +1,70 @@
 <%- include('partials/notauserheader') -%>
 
-<head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-</head>
+  <head>
+    <!-- Include jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
 
-<body class=" flex flex-col min-h-screen">
+  <body class="flex flex-col min-h-screen">
 
-  <main class="flex-1 flex justify-center items-center mx-auto container mt-10 ">
+    <main class="flex-1 flex justify-center items-center mx-auto container mt-10 ">
 
+      <div class="hero min-h-screen mr-4">
+        <div class="hero-content flex-col lg:flex-row-reverse mb-10">
+          <div class="text-center lg:text-left">
+            <h1 class="text-5xl font-bold px-10">Login now!</h1>
+            <p class="py-6 px-10">Continue your journey to a life of bliss now.</p>
+          </div>
+          <div class="my-auto grid flex-grow h-50 place-items-center">
 
-    <div class="hero min-h-screen mr-4">
-      <div class="hero-content flex-col lg:flex-row-reverse mb-10">
-        <div class="text-center lg:text-left">
-          <h1 class="text-5xl font-bold px-10 " >Login now!</h1>
-          <p class="py-6 px-10">Continue your journey to a life of bliss now.</p>
-        </div>
-        <div class="my-auto grid flex-grow h-50 place-items-center">
-                
-        <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 ">
-          <form action="/login" method="POST" class="card-body">
-           
-            <div class="form-control">
-              <label for="exampleInputEmail1" class="label">
-                  <span class="label-text">Email</span>
-              </label>
-              <input type="email" placeholder="Enter your email" class="input input-bordered input-primary " id="exampleInputEmail1" aria-describedby="emailHelp" name="email" />
+            <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+              <form action="/login" method="POST" class="card-body">
+
+                <div class="form-control">
+                  <label for="exampleInputEmail1" class="label">
+                    <span class="label-text">Email</span>
+                  </label>
+                  <input type="email" placeholder="Enter your email" class="input input-bordered input-primary"
+                    id="exampleInputEmail1" aria-describedby="emailHelp" name="email" />
+                </div>
+
+                <div class="form-control">
+                  <label for="exampleInputPassword1" class="label">
+                    <span class="label-text">Password</span>
+                  </label>
+                  <input type="password" placeholder="Enter your password" class="input input-bordered input-primary"
+                    id="exampleInputPassword1" name="password" />
+                </div>
+
+                <div class="form-control mt-6">
+                  <button id="loginbutton" type="submit"
+                    class="btn btn-ghost ring-4 ring-primary ring-offset-4 ring-offset-base-100">Login</button>
+                </div>
+
+              </form>
             </div>
-
-            <div class="form-control">
-              <label for="exampleInputPassword1" class="label">
-                <span class="label-text">Password</span>
-              </label>
-              <input type="password" placeholder="Enter your password" class="input input-bordered input-primary" id="exampleInputPassword1" name="password" />
-            </div>
-           
-            <div class="form-control mt-6">
-              <button id="loginbutton" type="submit" class="btn  btn-ghost ring-4 ring-primary ring-offset-4 ring-offset-base-100">Login</button>
-            </div>
-          
-          </form>
+          </div>
         </div>
       </div>
-    </div>      
 
-  </div>
-</main>
-</body>
+    </main>
+  </body>
 
-<script>
-  document.getElementById('loginbutton').addEventListener('click', function(event) {
-    // Get the values of email and password fields
-    var emailValue = document.getElementById('exampleInputEmail1').value;
-    var passwordValue = document.getElementById('exampleInputPassword1').value;
+  <script>
+    // Add a click event listener to the button
+    document.getElementById('loginbutton').addEventListener('click', function (event) {
+      // Get the values of email and password fields
+      var emailValue = document.getElementById('exampleInputEmail1').value;
+      var passwordValue = document.getElementById('exampleInputPassword1').value;
 
-    // Check if either email or password is blank
-    if (emailValue.trim() === '' || passwordValue.trim() === '') {
-      // Prevent form submission
-      event.preventDefault();
+      // Check if either email or password is blank
+      if (emailValue.trim() === '' || passwordValue.trim() === '') {
+        // Prevent form submission
+        event.preventDefault();
 
-      alert('Please make sure that you have entered both a valid email and password before submitting.');
-    }
-  });
-</script>
+        alert('Please make sure that you have entered both a valid email and password before submitting.');
+      }
+    });
+  </script>
 
   <%- include('partials/footer') -%>

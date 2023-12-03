@@ -1,142 +1,134 @@
 <%- include('partials/notauserheader') -%>
-    
-<head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-</head>
 
-<body class=" flex flex-col min-h-screen">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  </head>
 
-  <main class="flex-1 flex justify-center mx-auto container mt-10 ">
+  <body class=" flex flex-col min-h-screen">
 
-    <div class="hero min-h-screen mr-4 ">
-      <div class="hero-content flex-col lg:flex-row mb-10">
-        <div class="text-center lg:text-right">
-          <h1 class="text-5xl font-bold px-10 " >Signup now!</h1>
-          <p class="py-6 px-10">New to Kalm Life? Sign up for free. Start your journey to a life of bliss now.</p>
-        </div>
-        <div class="my-auto grid flex-grow h-50 place-items-center">
-      
-        <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 ">
+    <main class="flex-1 flex justify-center mx-auto container mt-10 ">
 
-          <form id="signup-form" action="/signup" method="POST"class="card-body">
-           
-            <div class="form-control">
-              <label for="userName" class="label">
-                  <span class="label-text">User Name</span>
-              </label>
-              <input type="text" placeholder="Enter a username" class="input input-bordered input-primary" id="userName" name="userName" />
+      <div class="hero min-h-screen mr-4 ">
+        <div class="hero-content flex-col lg:flex-row mb-10">
+          <div class="text-center lg:text-right">
+            <h1 class="text-5xl font-bold px-10 ">Signup now!</h1>
+            <p class="py-6 px-10">New to Kalm Life? Sign up for free. Start your journey to a life of bliss now.</p>
+          </div>
+          <div class="my-auto grid flex-grow h-50 place-items-center">
+
+            <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100 ">
+
+              <form id="signup-form" action="/signup" method="POST" class="card-body">
+
+                <div class="form-control">
+                  <label for="userName" class="label">
+                    <span class="label-text">User Name</span>
+                  </label>
+                  <input type="text" placeholder="Enter a username" class="input input-bordered input-primary"
+                    id="userName" name="userName" />
+                </div>
+
+                <div class="form-control">
+                  <label for="exampleInputEmail1" class="label">
+                    <span class="label-text">Email Address</span>
+                  </label>
+                  <input type="email" placeholder="Enter an email" class="input input-bordered input-primary "
+                    id="exampleInputEmail1" aria-describedby="emailHelp" name="email" />
+                </div>
+
+                <div class="form-control">
+                  <label for="password" class="form-label">
+                    <span class="label-text">Password</span>
+                  </label>
+                  <input type="password" placeholder="Enter a password" class="input input-bordered input-primary"
+                    id="password" name="password" />
+                </div>
+
+                <div class="form-control">
+                  <label for="confirmPassword" class="form-label">
+                    <span class="label-text">Confirm Password</span>
+                  </label>
+                  <input type="password" placeholder="Enter a password" class="input input-bordered input-primary"
+                    id="confirmPassword" name="confirmPassword" />
+                </div>
+
+                <div class="form-control">
+                  <label for="moodbeliefs" class="form-label mx-auto">What Is Your Belief System?</label>
+                  <select class="select select-bordered select-primary w-full max-w-xs" id="moodbeliefs"
+                    name="moodbeliefs">
+                    <option disabled selected>Choose Your Beliefs</option>
+                    <option value="Christian" id="christian" class="christian">Christian</option>
+                    <option value="Muslim" id="muslim" class="muslim">Muslim</option>
+                    <option value="Spiritualist" id="spiritualist" class="spiritualist">Spiritualist</option>
+                  </select>
+                </div>
+
+                <div class="form-control">
+                  <label for="disorders" class="form-label mx-auto">What Do You Struggle With?</label>
+                  <select class="select select-bordered select-primary w-full max-w-xs" id="disorders" name="disorders">
+                    <option disabled selected>Choose Your Mental Disorder</option>
+                    <option>Anxiety</option>
+                    <option>Depression</option>
+                    <option>Bipolar Disorder</option>
+                    <option>Post-Traumatic Stress Disorder (PTSD)</option>
+                    <option>Schizophrenia</option>
+                    <option>Obsessive Compulsive Disorder (OCD)</option>
+                    <option>Paranoia</option>
+                    <option>Psychosis</option>
+                    <option>Attention Deficit Hyperactivity Disorder (ADHD)</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+
+                <div class="form-control mt-6">
+                  <button id="sign-up-button" type="submit"
+                    class="btn  btn-ghost ring-4 ring-primary ring-offset-4 ring-offset-base-100">Signup</button>
+              </form>
             </div>
-
-            <div class="form-control">
-              <label for="exampleInputEmail1" class="label">
-                <span class="label-text">Email Address</span>
-              </label>
-              <input type="email" placeholder="Enter an email" class="input input-bordered input-primary " id="exampleInputEmail1" aria-describedby="emailHelp" name="email" />
-            </div>
-
-            <div class="form-control">
-              <label for="password" class="form-label">
-                <span class="label-text">Password</span>
-              </label>
-              <input type="password" placeholder="Enter a password" class="input input-bordered input-primary" id="password" name="password" />
-            </div>
-
-            <div class="form-control">
-              <label for="confirmPassword" class="form-label">
-                <span class="label-text">Confirm Password</span>
-              </label>
-              <input type="password" placeholder="Enter a password" class="input input-bordered input-primary" id="confirmPassword" name="confirmPassword" />
-            </div>
-          
-            <div class="form-control">
-              <label for="moodbeliefs" class="form-label mx-auto">What Is Your Belief System?</label>
-              <select class="select select-bordered select-primary w-full max-w-xs" id="moodbeliefs" name="moodbeliefs" >
-                <option disabled selected>Choose Your Beliefs</option>
-                <option value="Christian" id="christian" class="christian">Christian</option>
-                <option value="Muslim" id="muslim" class="muslim">Muslim</option>
-                <option value="Spiritualist" id="spiritualist" class="spiritualist">Spiritualist</option>
-              </select>
-            </div>
-  
-            <div class="form-control">
-              <label for="disorders" class="form-label mx-auto">What Do You Struggle With?</label>
-              <select class="select select-bordered select-primary w-full max-w-xs" id="disorders" name="disorders" >
-                <option disabled selected>Choose Your Mental Disorder</option>
-                <option>Anxiety</option>
-                <option>Depression</option>
-                <option>Bipolar Disorder</option>
-                <option>Post-Traumatic Stress Disorder (PTSD)</option>
-                <option>Schizophrenia</option>
-                <option>Obsessive Compulsive Disorder (OCD)</option>
-                <option>Paranoia</option>
-                <option>Psychosis</option>
-                <option>Attention Deficit Hyperactivity Disorder (ADHD)</option>
-                <option>Other</option>
-              </select>
-            </div>
-           
-            <div class="form-control mt-6">            
-          <button id="sign-up-button" type="submit" class="btn  btn-ghost ring-4 ring-primary ring-offset-4 ring-offset-base-100">Signup</button>
-        </form>
+          </div>
         </div>
       </div>
-    </div>      
-</div>
 
-</main>
+      <script>
+        $(document).ready(function () {
+          // Make a GET request to fetch the user's belief
+          $.get('/getUserBelief', function (data) {
+            if (data.belief) {
+              // Set the user's belief in your client-side UI
+              var userMoodBelief = data.belief;
 
-<script>
+              // Show the corresponding button based on the user's belief
+              if (userMoodBelief === "Christian") {
+                $('#christian-beliefs-button').show();
+                $('#muslim-beliefs-button, #spiritualist-beliefs-button').hide();
+              } else if (userMoodBelief === "Muslim") {
+                $('#muslim-beliefs-button').show();
+                $('#christian-beliefs-button, #spiritualist-beliefs-button').hide();
+              } else if (userMoodBelief === "Spiritualist") {
+                $('#spiritualist-beliefs-button').show();
+                $('#christian-beliefs-button, #muslim-beliefs-button').hide();
+              }
+            }
+          });
 
+          // Assuming your form has an ID, for example, "signup-form"
+          document.getElementById('signup-form').addEventListener('submit', function (event) {
+            // Get the selected value
+            var selectedBelief = document.getElementById('moodbeliefs').value;
 
-$(document).ready(function () {
-  // Make a GET request to fetch the user's belief
-  $.get('/getUserBelief', function (data) {
-    if (data.belief) {
-      // Set the user's belief in your client-side UI
-      var userMoodBelief = data.belief;
+            // Check if the user made a selection
+            if (selectedBelief === 'Choose Your Beliefs') {
+              // Prevent form submission
+              event.preventDefault();
 
-      // Show the corresponding button based on the user's belief
-      if (userMoodBelief === "Christian") {
-        $('#christian-beliefs-button').show();
-        $('#muslim-beliefs-button').hide();
-        $('#spiritualist-beliefs-button').hide();
-      } else if (userMoodBelief === "Muslim") {
-        $('#christian-beliefs-button').hide();
-        $('#muslim-beliefs-button').show();
-        $('#spiritualist-beliefs-button').hide();
-      } else if (userMoodBelief === "Spiritualist") {
-        $('#christian-beliefs-button').hide();
-        $('#muslim-beliefs-button').hide();
-        $('#spiritualist-beliefs-button').show();
-      }
-    }
-  });
-});
-
-  // Assuming your form has an ID, for example, "myForm"
-  document.getElementById('signup-form').addEventListener('submit', function(event) {
-    // Get the selected value
-    var selectedBelief = document.getElementById('moodbeliefs').value;
-
-    // Check if the user made a selection
-    if (selectedBelief === 'Choose Your Beliefs') {
-      // Prevent form submission
-      event.preventDefault();
-
-      alert('Please make sure that you have everything filled out before submitting.');
-    }
-  });
-
-
-
-</script>
-
+              alert('Please make sure that you have everything filled out before submitting.');
+            }
+          });
+        });
+      </script>
 
     </main>
-
-    </body>
-
     <div class="mt-10">
       <%- include('partials/footer') -%>
     </div>
-
+  </body>
