@@ -109,6 +109,13 @@ header, .footer {
   }
 }
 
+@media (min-width: 768px) {
+  .left-side-content {
+    height: 750px;
+  }
+}
+
+
 .textarea {
   resize: none;
   font-size: 14px;
@@ -134,3 +141,5 @@ th {
   min-width: 200px;
   filter: drop-shadow( #a3bfb2 1rem 1rem 8px);
 }
+
+
