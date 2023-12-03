@@ -13,7 +13,7 @@
   <% for (var i = 0; i < journalposts.length; i++) { %>
     <div class="flex flex-col w-full border-opacity-50 ">
       <div class="grid h-32 card rounded-box place-items-center grow p-8 ">
-        <a class="hover:text-rose-400 text-md underline decoration-2 underline-offset-8 pb-2  xs:text-base md:text-xl  " href="/journalpost/<%= journalposts[i]._id %>">
+        <a class="hover:text-neutral text-md underline decoration-2 underline-offset-8 pb-2  xs:text-base md:text-xl  " href="/journalpost/<%= journalposts[i]._id %>">
           <%= journalposts[i].title %>
         </a>
             <form

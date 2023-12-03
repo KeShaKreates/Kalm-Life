@@ -154,7 +154,6 @@ header, .footer {
 
   .phone-2  {
     box-shadow: 0 0 5px 5px #a3bfb2;
-    /* filter: drop-shadow( #a3bfb2 1rem 1rem 10px); */
   }
 
   /* jorunal entries page  */
@@ -167,3 +166,4 @@ header, .footer {
     }
 
 
+    
