@@ -1,16 +1,23 @@
-# Install
+Kalm Life
 
-`npm install`
+#Description
 
----
+A full-stack web application that focuses on bettering the user’s mental state.
 
----
-# Build CSS Run
+#Tools Used:
 
-`npm run build-css`
+- EJS
+- Tailwind
+- JS
+- jQuery
+- Node.js
+- Express.js 
+- MongoDB
 
+#Optimizations:
 
-# Start
+I would optimize this application by 
 
-`npm start` 
-`node server.js`
+#Lessons Learned:
+
+I learned how to set up the back end of an application all while making sure that the front end's user interface was efficient and effective.
