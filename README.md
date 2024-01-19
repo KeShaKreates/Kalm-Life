@@ -6,10 +6,10 @@ A full-stack web application that focuses on bettering the user’s mental state
 
 ## Tools Used:
 
-- EJS
 - Tailwind
-- JS
+- Javascript
 - jQuery
+- EJS
 - Node.js
 - Express.js 
 - MongoDB
