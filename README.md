@@ -15,7 +15,7 @@ A full-stack web application that focuses on bettering the user’s mental state
 - MongoDB
 
 ## Optimizations:
-I would optimize this application by adding more belief systems and mental health illnesses so it could be more inclusive. I would have also made each user's experience more unique by updating the user inteface based on not only their belief system but their mental health illness as well.
+I would optimize this application by adding more belief systems and mental health illnesses so it could be more inclusive. I would have also made each user's experience more unique by updating the user interface based on not only their belief system but their mental health illness as well.
 
 ## Lessons Learned:
 
